@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Request</title>
+</head>
+<body>
+<div class="w-full h-full"
+style="background-image: url('images/1.jpg')">
+<header class="text-white bg-opacity-50 bg-gray-900 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a href = "http://127.0.0.1:5501/home.html" class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+      <img class="w-12 h-12 object-cover " src="images/icons8-pirate-100 (1).png" alt="blog">
+      <span class="ml-3 text-xl">Pirate H04X</span>
+    </a>
+    <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
+      <a href = "http://127.0.0.1:5501/movies.html"class="mr-5 hover:text-red-600">Movies</a>
+      <a href = "http://127.0.0.1:5501/tv-series.html"class="mr-5 hover:text-red-600">TV Series</a>
+      
+    </nav>
+    <div class="hidden mx-0 md:block">
+      <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+              <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
+                  <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+          </span>
+
+          <input type="text" class="w-full py-1 pl-10 pr-4 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300" placeholder="Not Available For Now">
+      </div>
+  </div>
+<div class="dropdown">
+<div class="select">
+  <span class="selected"></span>
+  <div class="caret"></div> 
+<ul class="menu">
+  <a href="http://127.0.0.1:5501/request.html"><li>Request</li></a>
+  <li>Profile</li>
+  <a href = "http://127.0.0.1:5501/home.html"><li>Log in</li></a>
+</ul>
+</div>
+
+<style>
+body {
+font-family: Helvetica, sans-serif;
+background: #A51C1C;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+}
+.dropdown {
+min-width: 0em;
+position: relative;
+margin: 1em;
+}
+.dropdown * {
+box-sizing: border-box;
+}
+.select {
+background: #A51C1C transparent;
+color: #fff;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border: 0.5px #2a2f3b transparent solid;
+border-radius: 0.5em;
+padding: 0.5em;
+cursor: pointer;
+transition: background 0.3s;
+}
+
+.select-clicked {
+border: 3px  #26DCDC solid;
+box-shadow: 0 0 0.8em #26489a ;
+}
+
+.select:hover {
+background: #6E1313 transparent;
+}
+.caret {
+width: 0;
+height: 0;
+border-left: 5px solid transparent;
+border-right: 5px solid transparent;
+border-top: 6px solid #fff;
+transition: 0.3s;
+}
+.caret-rotate {
+transform: rotate(180deg);
+}
+.menu {
+list-style: none;
+padding: 0.2em 0.5em;
+background: bg-black bg-opacity-50 ;
+border: 1px #26DCDC solid;
+box-shadow: 0 0.5em 1em rgba(0,0,0,0.2);
+border-radius: 0.5em;
+color: #fff;
+position: absolute;
+top: 3em;
+left: 50%;
+width: 300%;
+transform: translateX(-50%);
+opacity: 0;
+display: none;
+transition: 0.2s;
+z-index: 1;
+}
+.menu li {
+padding: 0.4em 0.5em;
+margin: 0.3em 0;
+border-radius: 0.5em;
+cursor: pointer;
+}
+.menu li:hover {
+background: #26DCDC;
+}
+.menu-open {
+display: block;
+opacity: 1; 
+}
+</style>
+
+
+<script>
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+const select = dropdown.querySelector('.select');
+const caret = dropdown.querySelector('.caret');
+const menu = dropdown.querySelector('.menu');
+const options = dropdown.querySelectorAll('.menu li')
+const selected = dropdown.querySelector('.selected');
+
+select.addEventListener('click',() => {
+  select.classList.toggle('select-clicked');
+  caret.classList.toggle('caret-rotate');
+  menu.classList.toggle('menu-open');
+}); 
+option.forEach(option => {
+  option.addEventListener('click', () => {
+      selected.innerText = option.innerText;
+      select.classList.remove('select-clicked');
+      caret.classList.remove('caret-rotate');
+      menu.classList.remove('menu-open');
+      options.forEach(option => {
+          option.classList.remove('active')
+      });
+      option.classList.add('active');
+  });
+});
+});
+</script>  
+  
+</header>
+<section class="text-black bg-opacity-50 bg-gray-900 body-font relative">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Request</h1>
+        <p class="lg:w-2/3 mx-auto text-white text-base"></p>
+      </div>
+      <div class="lg:w-1/2 md:w-2/3 mx-auto">
+        <div class="flex flex-wrap -m-2">
+          <div class="p-2 w-1/2">
+            <div class="relative">
+              <label for="name" class="leading-7  text-sm text-gray-400">Name(Movie/TV series)</label>
+              <input type="text" id="name" name="name" class="w-full bg-gray-900 bg-opacity-40 rounded border border-red-500 focus:border-red-500 focus:bg-gray-900 focus:ring-2 focus:ring-red-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+          </div>
+          <div class="p-2 w-1/2">
+            <div class="relative">
+              <label for="email" class="leading-7 text-sm text-gray-400">Email</label>
+              <input type="email" id="email" name="email" class="w-full bg-gray-900 bg-opacity-40 rounded border border-red-500 focus:border-red-500 focus:bg-gray-900 focus:ring-2 focus:ring-red-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+          </div>
+          <div class="p-2 w-full">
+            <div class="relative">
+              <label for="message" class="leading-7 text-sm text-gray-400">Request Message (Optional):</label>
+              <textarea id="message" name="message" class="w-full bg-gray-900 bg-opacity-40 rounded border border-red-500 focus:border-red-500 focus:bg-gray-900 focus:ring-2 focus:ring-red-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+            </div>
+          </div>
+          <div class="p-2 w-full">
+            <button class="flex mx-auto text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">Request</button>
+          </div>
+          <div class="p-2 w-full pt-8 mt-8 border-t border-gray-800 text-center">
+            <a class="text-red-400">piratehoax@gmail.com</a>
+            <br>
+            <br>
+            <span class="inline-flex">
+              <a class="text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a class="ml-4 text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+              </a>
+              <a class="ml-4 text-gray-500">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                </svg>
+              </a>
+              <a class="ml-4 text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                </svg>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js">
+  </script>
+  <script>
+  function sendmail(){
+
+    var name = $('#Name').val();
+    var email = $('#Sender').val();
+    var subject = $('#Subject').val();
+    var message = $('#Message').val();
+    
+    var Body='Name: '+name+'<br>Email: '+email+'<br>Subject: '+subject+'<br>Message: '+message+;
+
+   }
+  
+  Email.send({
+    Host : "smtp.yourisp.com",
+    Username : "username",
+    Password : "password",
+    To : 'them@website.com',
+    From : "you@isp.com",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);</script>
+</body>
+</html>
